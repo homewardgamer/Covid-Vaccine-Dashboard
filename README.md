@@ -1,6 +1,6 @@
 # WebD-Selection
 ## Visit [here](https://corona-vaccine-dashboard.herokuapp.com/)
-### This website was build using express and implemented using nodeJS
+### This website was build using express backed by a mongoDB database
 
 # How to run it locally?
 ### Clone the Repo
