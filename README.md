@@ -40,4 +40,10 @@
     <td>String</td>
   </tr>
  </table>
+ 
+ # Features
+ ### Gets covid cases status for your district fetched from you pincode
+ ### Shows nearest vaccination centers and vaccination sessions for current date.
+ ### Vaccinated , not vaccinated , partially vaccinated : shows customised styles for all three status
+ 
 
