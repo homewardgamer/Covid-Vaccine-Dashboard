@@ -1,2 +1,43 @@
 # WebD-Selection
-## Visit [here] [https://corona-vaccine-dashboard.herokuapp.com/]
+## Visit [here](https://corona-vaccine-dashboard.herokuapp.com/)
+### This website was build using express and implemented using nodeJS
+
+# How to run it locally?
+### Clone the Repo
+### Use `npm install` to install all the dependencies
+### Run the command `node app.js`
+### The server will be running at [localhost:3000](https://localhost:3000)
+
+
+# APIS Used-
+## https://api.postalpincode.in/pincode/
+## https://api.covid19india.org/state_district_wise.json
+## https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=243122&date=11-06-2021
+
+<p>Due to restrictions by the Indian government the API can't be used for servers outside India therfore I have used a proxy connection to make the request from </p>
+
+# User Schema
+
+<table>
+  <tr>
+    <td>Username</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Pincode</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>First vaccine data</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Second vaccine data</td>
+    <td>String</td>
+  </tr>
+ </table>
+
