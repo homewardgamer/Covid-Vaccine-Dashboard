@@ -9,7 +9,7 @@
 ### The server will be running at [localhost:3000](https://localhost:3000)
 
 
-# APIS Used-
+# APIs used-
 ### https://api.postalpincode.in/pincode/
 ### https://api.covid19india.org/state_district_wise.json
 ### https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=243122&date=11-06-2021
