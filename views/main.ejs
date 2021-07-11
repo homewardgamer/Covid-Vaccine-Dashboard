@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/6ecf549234.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-light">
+      <div class="nav-btn">
+        <span class="nav-btn__burger"></span>
+      </div>
+      <h3>
+        <a href="#"> Covid Vaccinataion Dashboard </a>
+        <img src="https://img.icons8.com/ios/50/000000/insulin-pen.png" width="50" height="50" alt="" />
+      </h3>
+    </nav>
+  </header>
+
+  <div id="mySidebar" class="sidebar">
+    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+    <a href="#<%if(vaccinated && first){%>green<%}%><%if(!vaccinated && first){%>yellow<%}%><% if(!vaccinated&&!first){ %>red<%}%>">
+      <%= data.username%>
+    </a>
+    <a href=" #TWO">Covid Cases</a>
+    <a href="#maps">Resources</a>
+    <a href="#THREE">Why get vaccinated?</a>
+    <a href="#FOUR">Covid Centers</a>
+  </div>
+  <div id="main">
+    <section class="main__s">
+      <div class="row">
+        <div class="col-lg-10 a" id="<%if(vaccinated && first){%>green<%}%><%if(!vaccinated && first){%>yellow<%}%><% if(!vaccinated&&!first){ %>red<%}%>">
+          <div class="row">
+            <div class="col-lg-8">
+              <% if(vaccinated && first) {%>
+                <h1>You are vaccinated <%= data.username %> !</h1>
+                <p>
+                  Great! Now you are safe, just keep your masks on and sannitize
+                  regularly.People are not considered fully vaccinated until 2
+                  weeks after their second dose so keep your guard on!
+                </p>
+                <% } %>
+                  <% if(!vaccinated && first){ %>
+                    <h1>Your Second Dose is pending <%= data.username %> !</h1>
+                    <p>
+                      While you wait for your second dose, be precautious and
+                      constanly monitor your vitals.It is said that your immune
+                      system is weak during this time. Get your second dose as soon
+                      as possible after the prescribed time interval.
+                    </p>
+                    <% } %>
+                      <% if(!vaccinated && !first){ %>
+                        <h1>You are not vaccinated <%= data.username %> !</h1>
+                        <p>
+                          Get vaccinated as soon as possible! COVID-19 vaccines help
+                          keep you from getting seriously ill even if you do get
+                          COVID-19.It has no side effects and keeps you and your family
+                          protected!
+                        </p>
+                        <% } %>
+            </div>
+            <div class=" col-lg-2">
+          <% if(vaccinated && first) {%>
+          <i class="fas fa-check-circle"></i>
+          <% } %>
+          <% if(!vaccinated && first){ %>
+          <i class="fas fa-exclamation-triangle"></i>
+          <% } %>
+          <% if(!vaccinated && !first){ %>
+          <i class="fas fa-virus"></i>
+          <% } %>
+        </div>
+      </div>
+  </div>
+
+  <div class="col-lg-10 graph main__s">
+    <h3>Vaccination Trends</h3>
+    <img src="images/graph.png" alt="" height="100%" width="100%" />
+  </div>
+  </div>
+  </section>
+
+  <section class="stat" id="TWO">
+    <div class="row">
+      <h1>Covid Cases in <%= district %>
+      </h1>
+      <p>
+        <%= districtData.notes %>
+      </p>
+
+      <div class="col-lg-6">
+        <h3>Confirmed</h3>
+        <h1>
+          <%= districtData.confirmed %>
+        </h1>
+      </div>
+      <div class="col-lg-6">
+        <h3>Active</h3>
+        <h1>
+          <%= districtData.active %>
+        </h1>
+      </div>
+      <div class="col-lg-6">
+        <h3>Deceased</h3>
+        <h1>
+          <%= districtData.deceased %>
+        </h1>
+      </div>
+      <div class="col-lg-6">
+        <h3>Recovered</h3>
+        <h1>
+          <%= districtData.recovered %>
+        </h1>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <div class="col-lg-10" id="maps">
+        <h3>Find your nearest Covid resources here !</h3>
+        <div id="nearby-covid-places-mapmyindia"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row descip" id="THREE">
+      <h1>Why get vaccinated?</h1>
+
+      <div class="col-lg-4">
+        <h3>Getting vaccinated is safer than getting infected</h3>
+        <p>
+          Vaccines train our immune system to recognize the targeted virus
+          and create antibodies to fight off the disease without getting the
+          disease itself. After vaccination, the body is ready to fight the
+          virus if it is later exposed to it, thereby preventing illness.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h3>What to expect during vaccination</h3>
+        <p>
+          Medical professionals can best advise individuals on whether or
+          not, and when, they should receive a vaccine. A health worker will
+          administer the vaccine, and the person receiving it will be asked
+          to wait for 15–30 minutes before leaving the vaccination site.
+          This is so that health workers can observe individuals for any
+          unexpected reactions following vaccination.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <h3>Vaccine doses</h3>
+        <p>
+          For vaccines that require two doses, the first dose presents
+          antigens – proteins that stimulate the production of antibodies –
+          to the immune system for the first time. Scientists call this
+          priming the immune response. The second dose acts as a booster,
+          ensuring the immune system develops a memory response to fight off
+          the virus if it encounters it again.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row centers" id="FOUR">
+      <h1>Nearest Covid Vaccination Centers</h1>
+      <% if(vaccineData.sessions.length==0) {%>
+        
+        <h4 style="color: #548ca8;">No vaccination centers found near you for today ! Try visiting the site next day to view more centers. </h4>
+
+        <% } %>  
+      <% vaccineData.sessions.forEach((session,index)=>{%>
+
+      <div class="col-lg-4 covid-centers">
+        <div class="card">
+          <h4><span> Center Id:</span>
+            <%= session.center_id %>
+          </h4>
+          <table>
+            <tr>
+              <td>
+                <h5><span>Name: </span></h5>
+              </td>
+              <td>
+                <h5>
+                  <%= session.name %>
+                </h5>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5><span> Address: </span></h5>
+              </td>
+              <td>
+                <h5>
+                  <%= session.address %>
+                </h5>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5><span>Time:</span></h5>
+              </td>
+              <td>
+                <h5>
+                  <%= session.from %> - <%= session.to%>
+                </h5>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5><span>Available doses</span></h5>
+              </td>
+              <td>
+                <h5>
+                  <%= session.available_capacity %>
+                </h5>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h5><span>Vaccine</span></h5>
+              </td>
+              <td>
+                <h5>
+                  <%= session.vaccine %>
+                </h5>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <% }); %>
+    </div>
+  </section>
+  <div class="row last">
+    <div class="col-lg-10">
+      <div class="row">
+        <h1>Fight against Covid</h1>
+        <div class="col-lg-6">
+          <p>With the 3rd wave around the corner and the 2nd wave past us, we need to not let our guards down! This is
+            important for our continuing battle against the SARC Covid-19 virus.</p>
+
+          <p>Just as important is vaccination, the Indian government has started the biggest vaccination drive ever. If
+            you want to know on how to get vaccinated <a
+              href="https://prod-cdn.preprod.co-vin.in/assets/pdf/User_Guide_Citizen%20registration_18%2B.pdf">click
+              here.</a> </p>
+
+          <a href="https://selfregistration.cowin.gov.in/"> <button class="btn">BOOK YOUR SLOT</button> </a>
+        </div>
+        <div class="col-lg-4">
+          <img height="100%" width="100%" src="images/clip-vaccine.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <footer>
+    <p>Copyright &copy 
+      <script>
+        document.write(new Date().getFullYear())
+      </script>
+       Coded by <span> Aditya Verma </span> <a href="https://www.instagram.com/homeward_gamer/"> <i class="fab fa-instagram"> </i></a>
+        <a href="https://github.com/homewardgamer"><i class="fab fa-github"></i> </a> 
+        <a href="https://www.facebook.com/profile.php?id=100059607283259"><i class="fab fa-facebook-f"></i></a>
+        <a href="mailto:adityarubbers.AV@gmail.com"> <i class="fas fa-envelope"></i> </a>
+           </p>
+  </footer>
+  <script src="https://maps.mapmyindia.com/covid-places/showNearbyCovidPlacesOnMap.js"></script>
+  <script>
+    loadNearbyCovidCentresMapmyIndiaDiv(
+      document.getElementById("nearby-covid-places-mapmyindia")
+    );
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
