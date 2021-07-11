@@ -19,9 +19,13 @@
  # Features
  ## Gets covid cases status for your district fetched from you pincode
  <img src="https://github.com/homewardgamer/WebD-Selection/blob/main/Screenshot%202021-07-11%20at%206.55.40%20PM.png"/>
+ 
  ## Shows nearest vaccination centers and vaccination sessions for current date.
+ 
  <img src="https://github.com/homewardgamer/WebD-Selection/blob/main/Screenshot%202021-07-11%20at%206.54.48%20PM.png"/>
+ 
  ## Vaccinated , not vaccinated , partially vaccinated : shows customised styles for all three status
+ 
  <img src="https://github.com/homewardgamer/WebD-Selection/blob/main/Screenshot%202021-07-11%20at%205.54.23%20PM.png"/>
  <img src="https://github.com/homewardgamer/WebD-Selection/blob/main/Screenshot%202021-07-11%20at%205.55.01%20PM.png"/>
  <img src="https://github.com/homewardgamer/WebD-Selection/blob/main/Screenshot%202021-07-11%20at%205.55.44%20PM.png"/>
