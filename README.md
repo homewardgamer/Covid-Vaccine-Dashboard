@@ -10,9 +10,9 @@
 
 
 # APIS Used-
-## https://api.postalpincode.in/pincode/
-## https://api.covid19india.org/state_district_wise.json
-## https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=243122&date=11-06-2021
+### https://api.postalpincode.in/pincode/
+### https://api.covid19india.org/state_district_wise.json
+### https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=243122&date=11-06-2021
 
 <p>Due to restrictions by the Indian government the API can't be used for servers outside India therfore I have used a proxy connection to make the request from </p>
 
