@@ -1,4 +1,4 @@
-# Covid-Vaccination Dashboard
+# Covid Vaccination Dashboard
 ## Visit [here](https://corona-vaccine-dashboard.herokuapp.com/)
 ### A one place to go for all the details for vaccination and vaccine centers.
 
