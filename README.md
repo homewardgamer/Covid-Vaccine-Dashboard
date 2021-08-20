@@ -1,6 +1,6 @@
-# WebD-Selection
+# Covid-Vaccination Dashboard
 ## Visit [here](https://corona-vaccine-dashboard.herokuapp.com/)
-### This website was build using express backed by a mongoDB database
+### A one place to go for all the details for vaccination and vaccine centers.
 
 # How to run it locally?
 ### Clone the Repo
